@@ -1,11 +1,16 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3050;
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+const server = app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
 
-const PORT = process.env.PORT || 3055;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+server.on('error', (error) => {
+  if (error.code === 'EADDRINUSE') {
+    console.log(`Port ${port} is already in use. Trying another port.`);
+    server.listen(port + 1); // Try the next port
+  } else {
+    console.log('Error starting the server:', error);
+  }
 });
