@@ -4,9 +4,9 @@ import logo from '../assets/whitestodianlogo.png'; // Adjust the path as necessa
 
 function Header() {
     const headerStyle = {
-        backgroundColor: '#343a40',
+        backgroundColor: '#333',
         color: '#ffffff',
-        padding: '10px 20px',
+        padding: '10px 10px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center'
@@ -15,20 +15,23 @@ function Header() {
     const navStyle = {
         margin: '0',
         padding: '0',
+        listStyle: 'none',
         display: 'flex',
-        listStyle: 'none'
+        justifyContent: 'center', // This centers the nav items in the nav area
+        alignItems: 'center' // This centers the nav items vertically
     };
 
     const linkStyle = {
         margin: '0 10px',
         color: 'white',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        fontWeight: 'bold'
     };
 
     return (
         <header style={headerStyle}>
             <Link to="/">
-                <img src={logo} alt="Stodian Logo" style={{ height: '50px' }} />
+                <img src={logo} alt="Stodian Logo" style={{ height: '35px' }} />
             </Link>
             <nav>
                 <ul style={navStyle}>
