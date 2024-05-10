@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
+import Background from './components/Background'; // Make sure this path is correct
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Services from './pages/Services';
@@ -12,12 +13,13 @@ function App() {
         <Router>
             <div>
                 <Header />
+                <Background /> {/* This will render the background across all pages */}
                 <Routes>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/about" component={AboutUs} />
-                    <Route path="/services" component={Services} />
-                    <Route path="/portfolio" component={Portfolio} />
-                    <Route path="/contact" component={Contact} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<AboutUs />} />
+                    <Route path="/services" element={<Services />} />
+                    <Route path="/portfolio" element={<Portfolio />} />
+                    <Route path="/contact" element={<Contact />} />
                 </Routes>
             </div>
         </Router>

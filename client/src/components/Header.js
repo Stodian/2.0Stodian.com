@@ -8,7 +8,6 @@ function Header() {
         color: '#ffffff',
         padding: '10px 10px',
         display: 'flex',
-        justifyContent: 'space-between',
         alignItems: 'center'
     };
 
@@ -25,13 +24,18 @@ function Header() {
         margin: '0 10px',
         color: 'white',
         textDecoration: 'none',
-        fontWeight: 'bold'
+    };      
+
+    const logoStyle = {
+        height: '35px', // Adjust the height as needed
+        marginLeft: '80px'
     };
+
 
     return (
         <header style={headerStyle}>
             <Link to="/">
-                <img src={logo} alt="Stodian Logo" style={{ height: '35px' }} />
+                <img src={logo} alt="Stodian Logo" style={logoStyle} />
             </Link>
             <nav>
                 <ul style={navStyle}>
