@@ -5,7 +5,7 @@ import Projects from '../../../client/src/components/charity/Projects.js';
 import Testimonials from '../../../client/src/components/charity/Testimonials.js';
 import Custom from '../../../client/src/components/charity/Custom.js';
 
-const Home = () => {
+const Charity = () => {
     return (
         <div>
             <Service />
@@ -17,4 +17,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Charity;

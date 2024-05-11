@@ -5,7 +5,7 @@ import Projects from '../../../client/src/components/holdings/Projects.js';
 import Testimonials from '../../../client/src/components/holdings/Testimonials.js';
 import Custom from '../../../client/src/components/holdings/Custom.js';
 
-const Home = () => {
+const Holdings = () => {
     return (
         <div>
             <Service />
@@ -17,4 +17,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Holdings;

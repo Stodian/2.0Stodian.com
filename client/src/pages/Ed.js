@@ -5,7 +5,7 @@ import Projects from '../../../client/src/components/ed/Projects.js';
 import Testimonials from '../../../client/src/components/ed/Testimonials.js';
 import Custom from '../../../client/src/components/ed/Custom.js';
 
-const Home = () => {
+const Ed = () => {
     return (
         <div>
             <Service />
@@ -17,4 +17,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Ed;

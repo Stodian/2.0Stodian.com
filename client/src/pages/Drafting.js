@@ -5,7 +5,7 @@ import Projects from '../../../client/src/components/drafting/Projects.js';
 import Testimonials from '../../../client/src/components/drafting/Testimonials.js';
 import Custom from '../../../client/src/components/design/Custom.js';
 
-const Home = () => {
+const Drafting = () => {
     return (
         <div>
             <Service />
@@ -17,4 +17,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Drafting;

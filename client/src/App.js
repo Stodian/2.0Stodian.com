@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Background from './components/Background';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Stodian from './pages/Design';
-import Drafting from './pages/Stodian';
+import Stodian from './pages/Stodian';
+import Drafting from './pages/Drafting';
 import Design from './pages/Holdings';
-import Development from './pages/Developments';
-import Holdings from './pages/Drafting';
-import Charity from './pages/Drafting';
-import Ed from './pages/Drafting';
+import Developments from './pages/Developments';
+import Holdings from './pages/Holdings';
+import Charity from './pages/Charity';
+import Ed from './pages/Ed';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  // Importing AOS styles
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -29,13 +29,13 @@ function App() {
         <Background /> {/* This will render the background across all pages */}
           <Header />
           <Routes>
-            <Route path="../client/src/pages/Stodian.js" element={<Stodian />} />
-            <Route path="../client/src/pages/Drafting.js" element={<Drafting />} />
-            <Route path="../client/src/pages/Design.js" element={<Design />} />
-            <Route path="../client/src/pages/Developments.js" element={<Development />} />
-            <Route path="../client/src/pages/Holdings.js" element={<Holdings />} />
-            <Route path="../client/src/pages/Charity.js" element={<Charity />} />
-            <Route path="../client/src/pages/Ed.js" element={<Ed />} />
+            <Route path="/" element={<Stodian />} />
+            <Route path="/Drafting" element={<Drafting />} />
+            <Route path="/Design" element={<Design />} />
+            <Route path="/Developments" element={<Developments />} />
+            <Route path="/Holdings" element={<Holdings />} />
+            <Route path="/Charity" element={<Charity />} />
+            <Route path="/Ed" element={<Ed />} />
           </Routes>
           <Footer />
         </div>

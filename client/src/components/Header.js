@@ -6,7 +6,7 @@ function Header() {
     const headerStyle = {
         backgroundColor: '#333',
         color: '#ffffff',
-        padding: '10px 10px',
+        padding: '15px 10px',
         display: 'flex',
         alignItems: 'center',
         zIndex: 1

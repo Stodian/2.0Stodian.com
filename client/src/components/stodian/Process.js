@@ -7,7 +7,7 @@ const Process = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f0f0f0',  // Light grey background
+        backgroundColor: 'transparent',  // Light grey background
         color: '#333',  // Dark text color
         padding: '20px',
         boxSizing: 'border-box'

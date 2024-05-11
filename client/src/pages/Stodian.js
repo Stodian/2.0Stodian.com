@@ -5,9 +5,9 @@ import Projects from '../../../client/src/components/stodian/Projects.js';
 import Testimonials from '../../../client/src/components/stodian/Testimonials.js';
 import Custom from '../../../client/src/components/stodian/Custom.js';
 
-const Home = () => {
+const Stodian = () => {
     return (
-        <div>
+        <div> 
             <Service />
             <Process />
             <Projects />
@@ -16,5 +16,4 @@ const Home = () => {
         </div>
     );
 }
-
-export default Home;
+export default Stodian;

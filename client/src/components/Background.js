@@ -124,7 +124,7 @@ function Background() {
         };
     }, []);
 
-    return <canvas ref={canvasRef} style={{ position: 'absolute', left: 0, zIndex: -1 }} />;
+    return <canvas ref={canvasRef} style={{ position: 'absolute', left: 0, zIndex: -1, }} />;
 }
 
 export default Background;
