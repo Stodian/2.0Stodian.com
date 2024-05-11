@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/whitestodianlogo.png'; // Adjust the path as necessary
+import logo from '../icons/logos/Stodian Logo Final/White Version Final.png'; // Adjust the path as necessary client\public\icons\logos\Stodian Logo Final\White Version Final.png
 
 function Header() {
     const headerStyle = {
