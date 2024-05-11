@@ -5,7 +5,7 @@ function Home() {
     const heroStyle = {
         padding: '50px',
         textAlign: 'center',
-        backgroundColor: '#f4f4f4',
+        backgroundColor: 'transparent',
         color: 'black',
         fontSize: '22px'
     };
