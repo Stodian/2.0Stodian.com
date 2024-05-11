@@ -15,8 +15,24 @@ const Service = () => {
 
     return (
         <div style={style}>
-            <h1>Our Services</h1>
-            <p>Explore the wide range of services we offer.</p>
+            <div> style={{
+                    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sansSerif",
+                    margin: 0,
+                    padding: 0,
+                    backgroundColor: '#f5f5f5',
+                    color: '#333', /* Text color */
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '100vh', /* Ensure the body takes up the full height of the viewport */
+                    zIndex: 1, /* Higher than the canvas' z-index */
+            }}
+                    <h1>Our Services</h1>
+            </div>
+            <div> style={{
+
+            }}            
+            <p>Explore the wide range of services we offer.</p></div>
+
         </div>
     );
 };

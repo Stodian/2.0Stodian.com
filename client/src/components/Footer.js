@@ -10,10 +10,11 @@ function Footer() {
             width: '100%',
             backgroundColor: '#333', // White background or any color you prefer
             borderTop: '1px solid #ccc', // Adds a top border with a light grey color
-            padding: '10px 0', // Padding top and bottom for some spacing
+            padding: '2px 0', // Padding top and bottom for some spacing
             boxSizing: 'border-box', // Ensures padding doesn't affect the width
             marginTop: '100%', // Helps push the footer to the bottom if inside a flex container
-            opacity: 0.2
+            opacity: 1,
+            zIndex: 0
         }}>
             <hr className="footer-line" />
             <div className="social-links" style={{

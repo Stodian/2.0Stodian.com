@@ -43,7 +43,7 @@ const Typewriter = () => {
             backgroundColor: 'transparent',       /* Light gray background color */
             color: '#800000',                     /* Dark gray text color */
             fontWeight: 'bold', /* Makes the text bold */
-            zIndex: 2,
+            zIndex: 1,
         }}>{text}</span>
     );
 };

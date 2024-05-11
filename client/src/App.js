@@ -26,8 +26,8 @@ function App() {
     return (
       <Router>
         <div>
+        <Background /> {/* This will render the background across all pages */}
           <Header />
-          <Background /> {/* This will render the background across all pages */}
           <Routes>
             <Route path="../client/src/pages/Stodian.js" element={<Stodian />} />
             <Route path="../client/src/pages/Drafting.js" element={<Drafting />} />

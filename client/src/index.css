@@ -9,7 +9,7 @@ body {
   -ms-overflow-style: none;  /* Internet Explorer and Edge */
   scrollbar-width: none;  /* Firefox */
   overflow: auto; /* Enables scrolling without visible scroll bars */
-  
+  z-index: 0;
 }
 
 body::-webkit-scrollbar {
@@ -19,7 +19,6 @@ body::-webkit-scrollbar {
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none;  /* Chrome, Safari, and Opera */
 }
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

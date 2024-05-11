@@ -8,7 +8,8 @@ function Header() {
         color: '#ffffff',
         padding: '10px 10px',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        zIndex: 1
     };
 
     const linkStyle = {
@@ -35,7 +36,7 @@ function Header() {
                             padding: '0',
                             listStyle: 'none',
                             display: 'flex',
-                            justifyContent: 'centre'
+                            justifyContent: 'centre',
                 }}>
                     <li><Link to="/drafting" style={linkStyle}>Drafting</Link></li>
                     <li><Link to="/design" style={linkStyle}>Design</Link></li>
