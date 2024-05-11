@@ -30,7 +30,7 @@ function Header() {
                 <img src={logo} alt="Stodian Logo" style={logoStyle} />
             </Link>
             <nav>
-                <div className="link-container" style={{marginLeft: '320px'}}>
+                <div className="link-container" style={{marginLeft: '340px'}}>
                 <ul className="header-links" style={{
                             margin: '0',
                             padding: '0',

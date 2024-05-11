@@ -18,7 +18,7 @@ function Background() {
             canvas.height = document.documentElement.scrollHeight;
             canvas.style.position = 'absolute'; // Ensure canvas is positioned absolutely
             canvas.style.top = '0px'; // Start from the very top of the page
-            canvas.style.bottom = '55px'
+            canvas.style.bottom = '0px'
             drawGrid();
         };
 
@@ -81,8 +81,9 @@ function Background() {
         };
 
         const draw = event => {
-            const x = event.clientX;
-            const y = event.clientY - headerHeight;
+            const rect = canvas.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
             if (!lines.length || lines[lines.length - 1].x2 !== x || lines[lines.length - 1].y2 !== y) {
                 lines.push({
                     x1: lines.length > 0 ? lines[lines.length - 1].x2 : x,

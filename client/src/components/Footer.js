@@ -12,7 +12,6 @@ function Footer() {
             borderTop: '1px solid #ccc', // Adds a top border with a light grey color
             padding: '2px 0', // Padding top and bottom for some spacing
             boxSizing: 'border-box', // Ensures padding doesn't affect the width
-            marginTop: '100%', // Helps push the footer to the bottom if inside a flex container
             opacity: 1,
             zIndex: 0
         }}>
