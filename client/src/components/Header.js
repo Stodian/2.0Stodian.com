@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../icons/logos/Stodian Logo Final/White Version Final.png'; // Adjust the path as necessary client\public\icons\logos\Stodian Logo Final\White Version Final.png
+import logo from '../assets/icons/logos/Stodian Logo Final/White Version Final.png'; // Adjust the path as necessary client\public\icons\logos\Stodian Logo Final\White Version Final.png
 
 function Header() {
     const headerStyle = {
@@ -9,15 +9,6 @@ function Header() {
         padding: '10px 10px',
         display: 'flex',
         alignItems: 'center'
-    };
-
-    const navStyle = {
-        margin: '0',
-        padding: '0',
-        listStyle: 'none',
-        display: 'flex',
-        justifyContent: 'center', // This centers the nav items in the nav area
-        alignItems: 'center' // This centers the nav items vertically
     };
 
     const linkStyle = {
@@ -38,13 +29,22 @@ function Header() {
                 <img src={logo} alt="Stodian Logo" style={logoStyle} />
             </Link>
             <nav>
-                <ul style={navStyle}>
-                    <li><Link to="/" style={linkStyle}>Home</Link></li>
-                    <li><Link to="/about" style={linkStyle}>About Us</Link></li>
-                    <li><Link to="/services" style={linkStyle}>Services</Link></li>
-                    <li><Link to="/portfolio" style={linkStyle}>Portfolio</Link></li>
-                    <li><Link to="/contact" style={linkStyle}>Contact</Link></li>
+                <div className="link-container" style={{marginLeft: '320px'}}>
+                <ul className="header-links" style={{
+                            margin: '0',
+                            padding: '0',
+                            listStyle: 'none',
+                            display: 'flex',
+                            justifyContent: 'centre'
+                }}>
+                    <li><Link to="/drafting" style={linkStyle}>Drafting</Link></li>
+                    <li><Link to="/design" style={linkStyle}>Design</Link></li>
+                    <li><Link to="/developments" style={linkStyle}>Developments</Link></li>
+                    <li><Link to="/holdings" style={linkStyle}>Holdings</Link></li>
+                    <li><Link to="/charity" style={linkStyle}>Charity</Link></li>
+                    <li><Link to="/ed" style={linkStyle}>Ed</Link></li>
                 </ul>
+                </div>
             </nav>
         </header>
     );

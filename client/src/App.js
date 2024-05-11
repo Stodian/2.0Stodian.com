@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react';  // Correct way to import React and useEffect together
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
 import Background from './components/Background';
-import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
-import Services from './pages/Services';
-import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Stodian from './pages/Design';
+import Drafting from './pages/Stodian';
+import Design from './pages/Holdings';
+import Development from './pages/Developments';
+import Holdings from './pages/Drafting';
+import Charity from './pages/Drafting';
+import Ed from './pages/Drafting';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  // Importing AOS styles
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -25,12 +29,15 @@ function App() {
           <Header />
           <Background /> {/* This will render the background across all pages */}
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="../client/src/pages/Stodian.js" element={<Stodian />} />
+            <Route path="../client/src/pages/Drafting.js" element={<Drafting />} />
+            <Route path="../client/src/pages/Design.js" element={<Design />} />
+            <Route path="../client/src/pages/Developments.js" element={<Development />} />
+            <Route path="../client/src/pages/Holdings.js" element={<Holdings />} />
+            <Route path="../client/src/pages/Charity.js" element={<Charity />} />
+            <Route path="../client/src/pages/Ed.js" element={<Ed />} />
           </Routes>
+          <Footer />
         </div>
       </Router>
     );
