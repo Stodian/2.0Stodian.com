@@ -12,7 +12,7 @@ function Footer() {
             borderTop: '1px solid #ccc', // Adds a top border with a light grey color
             padding: '2px 0', // Padding top and bottom for some spacing
             boxSizing: 'border-box', // Ensures padding doesn't affect the width
-            opacity: 1,
+            opacity: 0.2,
             zIndex: 0
         }}>
             <hr className="footer-line" />
