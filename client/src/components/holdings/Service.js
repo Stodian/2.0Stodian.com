@@ -1,26 +1,46 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Service.css';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const initialItems = [
-  { title: 'Item 1', description: 'Description for item 1', category: 'Category 1', rating: 95, image: 'https://via.placeholder.com/150' },
-  { title: 'Item 2', description: 'Description for item 2', category: 'Category 2', rating: 88, image: 'https://via.placeholder.com/150' },
-  { title: 'Item 3', description: 'Description for item 3', category: 'Category 3', rating: 72, image: 'https://via.placeholder.com/150' },
-  { title: 'Item 4', description: 'Description for item 4', category: 'Category 1', rating: 81, image: 'https://via.placeholder.com/150' },
-  { title: 'Item 5', description: 'Description for item 5', category: 'Category 2', rating: 67, image: 'https://via.placeholder.com/150' },
-  { title: 'Item 6', description: 'Description for item 6', category: 'Category 3', rating: 90, image: 'https://via.placeholder.com/150' },
-  { title: 'Item 7', description: 'Description for item 7', category: 'Category 1', rating: 76, image: 'https://via.placeholder.com/150' },
-  { title: 'Item 8', description: 'Description for item 8', category: 'Category 2', rating: 85, image: 'https://via.placeholder.com/150' },
-  { title: 'Item 9', description: 'Description for item 9', category: 'Category 3', rating: 73, image: 'https://via.placeholder.com/150' },
-  { title: 'Item 10', description: 'Description for item 10', category: 'Category 1', rating: 92, image: 'https://via.placeholder.com/150' },
-  // Add more items as needed
+  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', image: 'https://via.placeholder.com/150' },
 ];
 
 const ItineraryComponent = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(initialItems);
+  const [filteredItems, setFilteredItems] = useState(initialItems);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
-  const itemsPerPage = 3; // Number of items to load per scroll
+  const itemsPerPage = 9; // Number of items to load per scroll
   const observer = useRef();
+
+  const [filters, setFilters] = useState({
+    category: '',
+    rating: '',
+    manufacturer: '',
+  });
 
   useEffect(() => {
     const loadItems = () => {
@@ -28,12 +48,40 @@ const ItineraryComponent = () => {
       const end = start + itemsPerPage;
       const newItems = initialItems.slice(start, end);
 
-      setItems((prevItems) => [...prevItems, ...newItems]);
+      setFilteredItems((prevItems) => [...prevItems, ...newItems]);
       if (newItems.length < itemsPerPage) setHasMore(false);
     };
 
     loadItems();
   }, [page]);
+
+  useEffect(() => {
+    const animateItems = () => {
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach((card, index) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 80%',
+              end: 'top 20%',
+              scrub: true,
+              toggleActions: 'play reverse play reverse',
+              markers: false,
+            },
+          }
+        );
+      });
+    };
+
+    animateItems();
+  }, [filteredItems]);
 
   const lastItemRef = useCallback((node) => {
     if (observer.current) observer.current.disconnect();
@@ -45,22 +93,78 @@ const ItineraryComponent = () => {
     if (node) observer.current.observe(node);
   }, [hasMore]);
 
+  const handleFilterChange = (e) => {
+    const { name, value } = e.target;
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [name]: value,
+    }));
+  };
+
+  useEffect(() => {
+    const filtered = initialItems.filter((item) => {
+      return (
+        (filters.category === '' || item.category === filters.category) &&
+        (filters.rating === '' || item.rating >= parseInt(filters.rating)) &&
+        (filters.manufacturer === '' || item.manufacturer.toLowerCase().includes(filters.manufacturer.toLowerCase()))
+      );
+    });
+    setFilteredItems(filtered);
+  }, [filters]);
+
   return (
     <div>
-      <h1 className="title">Itinerary</h1>
+      <h1 className="title">Stodian Design Itinerary</h1>
+      <div className="filter-container">
+        <label>
+          Category:
+          <select name="category" onChange={handleFilterChange}>
+            <option value="">All</option>
+            <option value="HVAC">HVAC</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Safety">Safety</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="Renewables">Renewables</option>
+            <option value="Security">Security</option>
+          </select>
+        </label>
+        <label>
+          Rating:
+          <input
+            type="number"
+            name="rating"
+            min="0"
+            max="100"
+            step="1"
+            onChange={handleFilterChange}
+            placeholder="Minimum Rating"
+          />
+        </label>
+        <label>
+          Manufacturer:
+          <input
+            type="text"
+            name="manufacturer"
+            onChange={handleFilterChange}
+            placeholder="Manufacturer"
+          />
+        </label>
+      </div>
       <div className="itinerary-container">
-        {items.map((item, index) => (
+        {filteredItems.slice(0, page * itemsPerPage).map((item, index) => (
           <div
             key={index}
-            ref={index === items.length - 1 ? lastItemRef : null}
+            ref={index === filteredItems.length - 1 ? lastItemRef : null}
             className="card"
           >
             <img src={item.image} alt={item.title} className="card-image" />
             <div className="card-content">
               <h2 className="card-title">{item.title}</h2>
+              <p><strong>Part Number:</strong> {item.partNumber}</p>
               <p className="card-description">{item.description}</p>
               <p><strong>Category:</strong> {item.category}</p>
               <p><strong>Rating:</strong> {item.rating}</p>
+              <p><strong>Manufacturer:</strong> {item.manufacturer}</p>
             </div>
           </div>
         ))}
