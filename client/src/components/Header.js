@@ -40,7 +40,7 @@ function Header() {
                     <li><Link to="/drafting" style={linkStyle}>Drafting</Link></li>
                     <li><Link to="/design" style={linkStyle}>Design</Link></li>
                     <li><Link to="/developments" style={linkStyle}>Developments</Link></li>
-                    <li><Link to="/holdings" style={linkStyle}>Holdings</Link></li>
+                    <li><Link to="/inventory" style={linkStyle}>Inventory</Link></li>
                     <li><Link to="/charity" style={linkStyle}>Charity</Link></li>
                     <li><Link to="/ed" style={linkStyle}>Ed</Link></li>
                 </ul>
