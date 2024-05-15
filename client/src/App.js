@@ -5,9 +5,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Stodian from './pages/Stodian';
 import Drafting from './pages/Drafting';
-import Design from './pages/Holdings';
+import Design from './pages/Inventory';
 import Developments from './pages/Developments';
-import Holdings from './pages/Holdings';
+import Inventory from './pages/Inventory';
 import Charity from './pages/Charity';
 import Ed from './pages/Ed';
 import AOS from 'aos';
@@ -33,7 +33,7 @@ function App() {
             <Route path="/Drafting" element={<Drafting />} />
             <Route path="/Design" element={<Design />} />
             <Route path="/Developments" element={<Developments />} />
-            <Route path="/Holdings" element={<Holdings />} />
+            <Route path="/Inventory" element={<Inventory />} />
             <Route path="/Charity" element={<Charity />} />
             <Route path="/Ed" element={<Ed />} />
           </Routes>
