@@ -73,7 +73,7 @@ const Items = () => {
   const [filteredItems, setFilteredItems] = useState(initialItems);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
-  const itemsPerPage = 9; // Number of items to load per scroll
+  const itemsPerPage = 21; // Number of items to load per scroll
   const observer = useRef();
 
   const [filters, setFilters] = useState({

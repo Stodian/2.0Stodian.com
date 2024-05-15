@@ -39,6 +39,7 @@ body {
   border-radius: 8px;
   border: 1px solid #ddd;
   transition: all 0.3s ease;
+  width: 200px;
 }
 
 .filter-container select:focus,
