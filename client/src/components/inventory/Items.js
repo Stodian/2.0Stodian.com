@@ -6,7 +6,7 @@ import './Items.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const initialItems = [
-  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp',    image: require('../../../../client/src/assets/icons/electrical/twin_outlet.png') },
   { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', image: 'https://via.placeholder.com/150' },
   { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
   { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', image: 'https://via.placeholder.com/150' },
