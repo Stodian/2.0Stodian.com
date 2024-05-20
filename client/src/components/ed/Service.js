@@ -1,15 +1,28 @@
+// src/components/ed/Service.js
+
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Service.css'; // Optional: for custom styling
 
 const Service = () => {
+  const navigate = useNavigate(); // Updated hook for navigation
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your sign-in logic here (e.g., authentication)
+    // For now, we'll assume sign-in is successful and navigate to the projects page
+    navigate('/projects');
+  };
+
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card">
             <div className="card-body">
-              <h3 className="card-title text-center">Sign In</h3>
-              <form>
+              <h3 className="card-title text-center"
+                  style={{marginBottom: '15px'}}>Members Area</h3>
+              <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="email">Email address</label>
                   <input
@@ -34,12 +47,19 @@ const Service = () => {
                     type="checkbox"
                     className="form-check-input"
                     id="rememberMe"
+                    style={{marginTop: '15px'}}
                   />
-                  <label className="form-check-label" htmlFor="rememberMe">
+                  <label className="form-check-label" 
+                         htmlFor="rememberMe" 
+                         style={{marginTop: '10px'}}>
                     Remember me
                   </label>
                 </div>
-                <button type="submit" className="btn btn-primary btn-block">
+                <button
+                  type="submit"
+                  className="btn btn-block"
+                  style={{ backgroundColor: '#800000', borderColor: '#800000', marginTop: '20px', color: 'white'}}
+                >
                   Sign In
                 </button>
               </form>

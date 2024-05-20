@@ -10,6 +10,7 @@ import Developments from './pages/Developments';
 import Inventory from './pages/Inventory';
 import Charity from './pages/Charity';
 import Ed from './pages/Ed';
+import PrivateProjects from '../../client/src/pages/PrivateProjects.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  // Importing AOS styles
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -36,6 +37,7 @@ function App() {
             <Route path="/Inventory" element={<Inventory />} />
             <Route path="/Charity" element={<Charity />} />
             <Route path="/Ed" element={<Ed />} />
+            <Route path="/Projects" element={<PrivateProjects />} />
           </Routes>
           <Footer />
         </div>
