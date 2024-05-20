@@ -1,16 +1,14 @@
-
-
 .container {
   display: flex;
-  height: calc(100vh - 215px);  /* Adjust the height to move it upwards */
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px);
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
 .card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-left: 300px;  /* Move it to the left */
-  margin-top: 150px;  /* Move it upwards */
 }
 
 .card-title {
@@ -39,9 +37,4 @@
 .container::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* Optional: just to be safe */
-}
-
-.custom-btn {
-  background-color: #800000;
-  border-color: #800000;
 }
