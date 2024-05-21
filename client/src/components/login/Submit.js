@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Service.css'; // Optional: for custom styling
+import './Submit.css'; 
 
-const Service = () => {
-  const navigate = useNavigate(); // Updated hook for navigation
+const Submit = () => {
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -71,4 +71,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default Submit;
