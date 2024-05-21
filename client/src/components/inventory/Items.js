@@ -69,7 +69,6 @@ const initialItems = [
 ];
 
 const Items = () => {
-  const [items, setItems] = useState(initialItems);
   const [filteredItems, setFilteredItems] = useState(initialItems);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);

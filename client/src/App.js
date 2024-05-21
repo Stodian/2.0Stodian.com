@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Stodian from './pages/Stodian';
 import Drafting from './pages/Drafting';
-import Design from './pages/Inventory';
+import Design from './pages/Design';
 import Developments from './pages/Developments';
 import Inventory from './pages/Inventory';
 import Charity from './pages/Charity';
