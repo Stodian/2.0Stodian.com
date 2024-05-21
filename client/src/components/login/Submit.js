@@ -1,8 +1,5 @@
-// src/components/ed/Service.js
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Submit.module.css'; 
 
 const Submit = () => {
   const navigate = useNavigate();
@@ -15,7 +12,7 @@ const Submit = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" style={{margin: '500px'}}>
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card">
