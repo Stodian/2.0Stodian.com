@@ -58,7 +58,7 @@ const Submit = () => {
                 <button
                   type="submit"
                   className="btn btn-block"
-                  style={{ backgroundColor: '#800000', borderColor: '#800000', marginTop: '20px', color: 'white'}}
+                  style={{ backgroundColor: '#800000', borderColor: '#800000', marginTop: '20px', color: 'white', padding: '7px 116px'}}
                 >
                   Sign In
                 </button>
