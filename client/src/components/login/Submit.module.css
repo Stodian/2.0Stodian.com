@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: center;
   height: calc(100vh - 100px);
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
 }
 
 .card {
@@ -38,3 +38,4 @@
   width: 0px;
   background: transparent; /* Optional: just to be safe */
 }
+
