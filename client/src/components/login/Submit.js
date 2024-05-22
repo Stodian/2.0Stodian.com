@@ -1,20 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { authenticateUser } from '../../services/auth';
 
 const Submit = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    // Add the overflow: hidden style to body and html elements when the component mounts
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
+    // Clean up the style when the component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+    };
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your sign-in logic here (e.g., authentication)
-    // For now, we'll assume sign-in is successful and navigate to the projects page
-    navigate('/projects');
+    setLoading(true);
+    setError('');
+
+    try {
+      // Call the authentication function
+      // const userData = await authenticateUser(email, password);
+      await authenticateUser(email, password);
+
+      // Assuming successful authentication, redirect to the projects page
+      navigate('/projects');
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div 
       className="d-flex justify-content-center align-items-center" 
-      style={{ minHeight: '100vh', marginLeft: '-150px', marginTop: '-166px' }}
+      style={{ minHeight: '730px', marginLeft: '-150px' }}
     >
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -23,6 +52,7 @@ const Submit = () => {
               <h3 className="card-title text-center" style={{ marginBottom: '15px' }}>
                 Members Area
               </h3>
+              {error && <div className="alert alert-danger">{error}</div>}
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="email">Email address</label>
@@ -32,6 +62,9 @@ const Submit = () => {
                     id="email"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="form-group">
@@ -41,6 +74,9 @@ const Submit = () => {
                     className="form-control"
                     id="password"
                     placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="form-group form-check">
@@ -68,8 +104,9 @@ const Submit = () => {
                     color: 'white',
                     padding: '7px 116px',
                   }}
+                  disabled={loading}
                 >
-                  Sign In
+                  {loading ? 'Signing In...' : 'Sign In'}
                 </button>
               </form>
             </div>
