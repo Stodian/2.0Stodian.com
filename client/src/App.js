@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';  // Correct way to import React and useEffect together
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Background from './components/Background';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Background from './components/common/Background';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
 import Stodian from './pages/Stodian';
 import Drafting from './pages/Drafting';
 import Design from './pages/Design';

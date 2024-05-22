@@ -1,8 +1,8 @@
 import React from 'react';
-import linkedinIcon from '../../../client/src/assets/icons/socials/2644994_linkedin_media_social_icon.png';
-import instagramIcon from '../../../client/src/assets/icons/socials/4691240_instagram_icon.png';
-import twitterIcon from '../../../client/src/assets/icons/socials/2644990_media_social_twitter_icon.png';
-import youtubeIcon from '../../../client/src/assets/icons/socials/2644987_media_social_youtube_icon.png';
+import linkedinIcon from '../../../../client/src/assets/icons/socials/2644994_linkedin_media_social_icon.png';
+import instagramIcon from '../../../../client/src/assets/icons/socials/4691240_instagram_icon.png';
+import twitterIcon from '../../../../client/src/assets/icons/socials/2644990_media_social_twitter_icon.png';
+import youtubeIcon from '../../../../client/src/assets/icons/socials/2644987_media_social_youtube_icon.png';
 
 function Footer() {
     return (
