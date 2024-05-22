@@ -37,8 +37,8 @@ function Header() {
                         display: 'flex',
                         justifyContent: 'centre',
                     }} data-aos="fade-up">
-                    <li><Link to="/drafting" style={linkStyle}>Drafting</Link></li>
-                    <li><Link to="/design" style={linkStyle}>Design</Link></li>
+                    <li><Link to="/plane" style={linkStyle}>Plane</Link></li>
+                    <li><Link to="/space" style={linkStyle}>Space</Link></li>
                     <li><Link to="/developments" style={linkStyle}>Developments</Link></li>
                     <li><Link to="/inventory" style={linkStyle}>Inventory</Link></li>
                     <li><Link to="/charity" style={linkStyle}>Charity</Link></li>

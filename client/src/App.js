@@ -4,8 +4,8 @@ import Background from './components/common/Background';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import Stodian from './pages/Stodian';
-import Drafting from './pages/Drafting';
-import Design from './pages/Design';
+import Plane from './pages/Plane';
+import Space from './pages/Space';
 import Developments from './pages/Developments';
 import Inventory from './pages/Inventory';
 import Charity from './pages/Charity';
@@ -31,8 +31,8 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Stodian />} />
-            <Route path="/Drafting" element={<Drafting />} />
-            <Route path="/Design" element={<Design />} />
+            <Route path="/Plane" element={<Plane />} />
+            <Route path="/Space" element={<Space />} />
             <Route path="/Developments" element={<Developments />} />
             <Route path="/Inventory" element={<Inventory />} />
             <Route path="/Charity" element={<Charity />} />
