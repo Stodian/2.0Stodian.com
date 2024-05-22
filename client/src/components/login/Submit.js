@@ -12,13 +12,17 @@ const Submit = () => {
   };
 
   return (
-    <div className="container mt-5" style={{margin: '500px'}}>
+    <div 
+      className="d-flex justify-content-center align-items-center" 
+      style={{ minHeight: '100vh', marginLeft: '-150px', marginTop: '-166px' }}
+    >
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card">
             <div className="card-body">
-              <h3 className="card-title text-center"
-                  style={{marginBottom: '15px'}}>Members Area</h3>
+              <h3 className="card-title text-center" style={{ marginBottom: '15px' }}>
+                Members Area
+              </h3>
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="email">Email address</label>
@@ -44,18 +48,26 @@ const Submit = () => {
                     type="checkbox"
                     className="form-check-input"
                     id="rememberMe"
-                    style={{marginTop: '15px'}}
+                    style={{ marginTop: '15px' }}
                   />
-                  <label className="form-check-label" 
-                         htmlFor="rememberMe" 
-                         style={{marginTop: '10px'}}>
+                  <label
+                    className="form-check-label"
+                    htmlFor="rememberMe"
+                    style={{ marginTop: '10px' }}
+                  >
                     Remember me
                   </label>
                 </div>
                 <button
                   type="submit"
                   className="btn btn-block"
-                  style={{ backgroundColor: '#800000', borderColor: '#800000', marginTop: '20px', color: 'white', padding: '7px 116px'}}
+                  style={{
+                    backgroundColor: '#800000',
+                    borderColor: '#800000',
+                    marginTop: '20px',
+                    color: 'white',
+                    padding: '7px 116px',
+                  }}
                 >
                   Sign In
                 </button>
