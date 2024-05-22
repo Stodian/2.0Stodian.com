@@ -43,7 +43,7 @@ const Submit = () => {
   return (
     <div 
       className="d-flex justify-content-center align-items-center" 
-      style={{ minHeight: '730px', marginLeft: '-150px' }}
+      style={{ minHeight: '730px', marginLeft: '-150px', marginBottom: '100px' }}
     >
       <div className="row justify-content-center">
         <div className="col-md-6">
