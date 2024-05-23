@@ -214,7 +214,7 @@ const Items = () => {
               )}
             </div>
             <div className="card-content">
-              <h2 className="card-title">{item.title}</h2>
+            <h2 className="card-title" style={{ color: '#800000', fontWeight: 'bold' }}>{item.title}</h2>
               <p><strong>Part Number:</strong> {item.partNumber}</p>
               <p className="card-description">{item.description}</p>
               <p><strong>Category:</strong> {item.category}</p>
