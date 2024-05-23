@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Items.css';
@@ -6,7 +6,7 @@ import './Items.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const initialItems = [
-  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png'), hoverImage: require('../../../../client/src/assets/icons/electrical/2d_outlet.png') },
   { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
   { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
   { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
@@ -74,6 +74,8 @@ const Items = () => {
   const [page, setPage] = useState(1);
   const itemsPerPage = 21; // Number of items to load per scroll
   const observer = useRef();
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const animationsInitialized = useRef(false);
 
   const [filters, setFilters] = useState({
     category: '',
@@ -94,7 +96,9 @@ const Items = () => {
     loadItems();
   }, [page]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (animationsInitialized.current) return;
+
     const animateItems = () => {
       const cards = document.querySelectorAll('.card');
 
@@ -120,6 +124,12 @@ const Items = () => {
     };
 
     animateItems();
+    animationsInitialized.current = true;
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      animationsInitialized.current = false;
+    };
   }, [filteredItems]);
 
   const lastItemRef = useCallback((node) => {
@@ -194,8 +204,15 @@ const Items = () => {
             key={index}
             ref={index === filteredItems.length - 1 ? lastItemRef : null}
             className="card"
+            onMouseEnter={() => setHoveredItem(index)}
+            onMouseLeave={() => setHoveredItem(null)}
           >
-            <img src={item.image} alt={item.title} className="card-image" />
+            <div className="card-image-container">
+              <img src={item.image} alt={item.title} className={`card-image ${hoveredItem === index ? 'hidden' : ''}`} />
+              {item.hoverImage && (
+                <img src={item.hoverImage} alt={item.title} className={`card-image ${hoveredItem === index ? '' : 'hidden'}`} />
+              )}
+            </div>
             <div className="card-content">
               <h2 className="card-title">{item.title}</h2>
               <p><strong>Part Number:</strong> {item.partNumber}</p>
