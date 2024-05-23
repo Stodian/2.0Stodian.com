@@ -10,7 +10,8 @@ const Service = () => {
     backgroundColor: 'transparent', // Slightly lighter grey
     color: '#222',          // Darker text for contrast
     padding: '40px',        // More padding for visual comfort
-    textAlign: 'center'    // Center-align text for better readability
+    textAlign: 'center',    // Center-align text for better readability
+    zIndex: 5
   };
 
   return (

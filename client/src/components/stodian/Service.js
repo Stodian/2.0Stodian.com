@@ -95,7 +95,8 @@ const Service = () => {
     backgroundColor: 'transparent',
     color: '#333',
     fontWeight: 'bold',
-    zIndex: 2,
+    zIndex: 1, // Higher z-index to sit above the background
+    position: 'relative', // Ensure it sits on top of the background
   };
 
   return (
@@ -162,7 +163,8 @@ const buttonStyle1 = {
   fontWeight: 'bold',
   textTransform: 'uppercase',
   outline: 'none',
-  zIndex: 1,
+  zIndex: 1, // Higher z-index for the button to ensure it sits above other content
+  position: 'relative',
 };
 
 const buttonStyle2 = {
@@ -178,7 +180,8 @@ const buttonStyle2 = {
   fontWeight: 'bold',
   textTransform: 'uppercase',
   outline: 'none',
-  zIndex: 1,
+  zIndex: 1, // Higher z-index for the button to ensure it sits above other content
+  position: 'relative',
 };
 
 export default Service;

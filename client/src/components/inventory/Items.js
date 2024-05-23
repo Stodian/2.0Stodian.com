@@ -6,70 +6,62 @@ import './Items.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const initialItems = [
-  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png'), hoverImage: require('../../../../client/src/assets/icons/electrical/2d_outlet.png') },
-  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
-  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', image: 'https://via.placeholder.com/150' },
-  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', image: 'https://via.placeholder.com/150' },
+  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', price: 1500, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png'), hoverImage: require('../../../../client/src/assets/icons/electrical/2d_outlet.png') },
+  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', price: 300, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', price: 200, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', price: 800, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', price: 1000, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', price: 600, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', price: 150, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', price: 250, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', price: 700, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', price: 400, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', price: 1500, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', price: 300, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', price: 200, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', price: 800, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', price: 1000, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', price: 600, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', price: 150, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', price: 250, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', price: 700, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', price: 400, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', price: 1500, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', price: 300, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', price: 200, image: require('../../../../client/src/assets/icons/electrical/switched_twin_outlet.png') },
+  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', price: 800, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', price: 1000, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', price: 600, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', price: 150, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', price: 250, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', price: 700, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', price: 400, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', price: 1500, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', price: 300, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', price: 200, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', price: 800, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', price: 1000, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', price: 600, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', price: 150, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', price: 250, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', price: 700, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', price: 400, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'HVAC001', title: 'HVAC Unit', description: 'High-efficiency HVAC unit for climate control', category: 'HVAC', rating: 95, manufacturer: 'ACME Corp', price: 1500, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'ELEC001', title: 'Lighting System', description: 'LED lighting system with automated controls', category: 'Electrical', rating: 88, manufacturer: 'Bright Lights Inc', price: 300, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SAFE001', title: 'Fire Alarm', description: 'State-of-the-art fire detection and alarm system', category: 'Safety', rating: 92, manufacturer: 'Safety First', price: 200, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'PLMB001', title: 'Water Heater', description: 'Tankless water heater for instant hot water', category: 'Plumbing', rating: 90, manufacturer: 'Hot Water Solutions', price: 800, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'RENE001', title: 'Solar Panels', description: 'High-efficiency solar panels for renewable energy', category: 'Renewables', rating: 89, manufacturer: 'Green Energy', price: 1000, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SECU001', title: 'Security Cameras', description: 'Surveillance cameras with night vision', category: 'Security', rating: 85, manufacturer: 'Secure Vision', price: 600, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'SAFE002', title: 'Smoke Detectors', description: 'Advanced smoke detectors for early warning', category: 'Safety', rating: 86, manufacturer: 'Safety First', price: 150, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'HVAC002', title: 'Thermostat', description: 'Smart thermostat with remote control', category: 'HVAC', rating: 84, manufacturer: 'Comfort Control', price: 250, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'ELEC002', title: 'Power Backup', description: 'Uninterruptible power supply (UPS) system', category: 'Electrical', rating: 83, manufacturer: 'Reliable Power', price: 700, image: 'https://via.placeholder.com/150' },
+  { partNumber: 'PLMB002', title: 'Water Pump', description: 'High-efficiency water pump for reliable water supply', category: 'Plumbing', rating: 82, manufacturer: 'AquaFlow', price: 400, image: 'https://via.placeholder.com/150' },
 ];
 
+
+
 const Items = () => {
-  const [filteredItems, setFilteredItems] = useState(initialItems);
+  const [filteredItems, setFilteredItems] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
   const itemsPerPage = 21; // Number of items to load per scroll
@@ -81,6 +73,7 @@ const Items = () => {
     category: '',
     rating: '',
     manufacturer: '',
+    priceOrder: '',
   });
 
   useEffect(() => {
@@ -151,13 +144,24 @@ const Items = () => {
   };
 
   useEffect(() => {
-    const filtered = initialItems.filter((item) => {
+    let filtered = initialItems.filter((item) => {
       return (
         (filters.category === '' || item.category === filters.category) &&
         (filters.rating === '' || item.rating >= parseInt(filters.rating)) &&
         (filters.manufacturer === '' || item.manufacturer.toLowerCase().includes(filters.manufacturer.toLowerCase()))
       );
     });
+
+    if (filters.priceOrder) {
+      filtered = filtered.sort((a, b) => {
+        if (filters.priceOrder === 'asc') {
+          return a.price - b.price;
+        } else {
+          return b.price - a.price;
+        }
+      });
+    }
+
     setFilteredItems(filtered);
   }, [filters]);
 
@@ -197,6 +201,14 @@ const Items = () => {
             placeholder="Manufacturer"
           />
         </label>
+        <label>
+          Price:
+          <select name="priceOrder" onChange={handleFilterChange}>
+            <option value="">None</option>
+            <option value="asc">Low to High</option>
+            <option value="desc">High to Low</option>
+          </select>
+        </label>
       </div>
       <div className="itinerary-container">
         {filteredItems.slice(0, page * itemsPerPage).map((item, index) => (
@@ -214,12 +226,13 @@ const Items = () => {
               )}
             </div>
             <div className="card-content">
-            <h2 className="card-title" style={{ color: '#800000', fontWeight: 'bold' }}>{item.title}</h2>
+              <h2 className="card-title" style={{ color: '#800000', fontWeight: 'bold' }}>{item.title}</h2>
               <p><strong>Part Number:</strong> {item.partNumber}</p>
               <p className="card-description">{item.description}</p>
               <p><strong>Category:</strong> {item.category}</p>
               <p><strong>Rating:</strong> {item.rating}</p>
               <p><strong>Manufacturer:</strong> {item.manufacturer}</p>
+              <p><strong>Price:</strong> ${item.price}</p> {/* Displaying the price */}
             </div>
           </div>
         ))}
