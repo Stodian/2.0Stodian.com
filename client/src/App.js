@@ -8,7 +8,6 @@ import Plane from './pages/Plane';
 import Space from './pages/Space';
 import Developments from './pages/Developments';
 import Inventory from './pages/Inventory';
-import Charity from './pages/Charity';
 import Login from './pages/Login.js';
 import PrivateProjects from '../../client/src/pages/PrivateProjects.js';
 import AOS from 'aos';
@@ -35,7 +34,6 @@ function App() {
             <Route path="/Space" element={<Space />} />
             <Route path="/Developments" element={<Developments />} />
             <Route path="/Inventory" element={<Inventory />} />
-            <Route path="/Charity" element={<Charity />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Projects" element={<PrivateProjects />} />
           </Routes>
