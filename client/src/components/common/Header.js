@@ -21,13 +21,13 @@ function Header() {
 
     const logoStyle = {
         height: '35px',
-        marginLeft: '100px'
+        marginLeft: '100px', // Adjust this as needed
     };
 
     const navStyle = {
         flexGrow: 1,
         display: 'flex',
-        marginLeft: '500px',
+        marginLeft: '380px',
     };
 
     const linkContainerStyle = {
