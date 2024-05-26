@@ -1,3 +1,4 @@
+import zIndex from '@mui/material/styles/zIndex';
 import React from 'react';
 
 const CloudpointScanning = () => {
@@ -10,7 +11,8 @@ const CloudpointScanning = () => {
     backgroundColor: 'transparent',
     color: '#222',
     padding: '40px',
-    textAlign: 'center'
+    textAlign: 'center',
+    zIndex: 5
   };
 
   return (
