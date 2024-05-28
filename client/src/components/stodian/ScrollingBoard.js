@@ -1,12 +1,17 @@
 // src/ScrollingBoard.js
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import './ScrollingBoard.css';
 
 const floorplans = [
-  { title: "Oscar's Cooking Club", description: "A culinary community for food enthusiasts to share recipes, cooking tips, and delicious creations.", access: "Discord", buildingType: "Restaurant", cost: "$8.99 / month" },
-  { title: "Luna's Nature Explorers", description: "Connect with nature enthusiasts, share outdoor adventures, and learn about the wonders of the natural world.", access: "WhatsApp", buildingType: "Park", cost: "$7.99 / month" },
-  { title: "Jacob's Dev Club", description: "The sickest dev community on the planet for people that love building.", access: "Discord", buildingType: "Office", cost: "$7.99 / month" },
-  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" }
+  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
+  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
+  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
+  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
+  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
+  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
+  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
+  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
+  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
 ];
 
 const ScrollingBoard = () => {
@@ -14,18 +19,18 @@ const ScrollingBoard = () => {
   const length = floorplans.length;
   const scrollingBoardRef = useRef(null);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrent((prev) => (prev + 1) % length);
-  };
+  }, [length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrent((prev) => (prev - 1 + length) % length);
-  };
+  }, [length]);
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextSlide]);
 
   useEffect(() => {
     if (scrollingBoardRef.current) {
