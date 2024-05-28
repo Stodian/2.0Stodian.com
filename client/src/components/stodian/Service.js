@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import ScrollingBoard from './ScrollingBoard';
 
 const Service = () => {
   const dynamicTextRef = useRef('');
@@ -147,8 +146,6 @@ const Service = () => {
           How it Works
         </button>
       </div>
-
-      <ScrollingBoard modelPath="../../../../client/src/components/stodian/ScrollingBoard" /> {/* Use the correct path to your GLB model */}
 
     </main>
   );
