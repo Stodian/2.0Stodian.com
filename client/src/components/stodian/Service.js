@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import ModelViewer from '../../../../client/src/components/stodian/ModelViewer';
+import ScrollingBoard from './ScrollingBoard';
 
 const Service = () => {
   const dynamicTextRef = useRef('');
@@ -148,7 +148,7 @@ const Service = () => {
         </button>
       </div>
 
-      <ModelViewer modelPath="../../../../client/src/components/stodian/ModelViewer" /> {/* Use the correct path to your GLB model */}
+      <ScrollingBoard modelPath="../../../../client/src/components/stodian/ScrollingBoard" /> {/* Use the correct path to your GLB model */}
 
     </main>
   );
