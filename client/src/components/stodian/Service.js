@@ -85,7 +85,6 @@ const Service = () => {
   }, []);
 
   const pageStyle = {
-    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     marginTop: '200px',

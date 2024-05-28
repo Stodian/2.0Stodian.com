@@ -5,7 +5,7 @@ import ScrollingBoard from '../components/stodian/ScrollingBoard';
 
 const Stodian = () => {
     return (
-        <div> 
+        <div className="container">
             <div className="snap-section"><Service /></div>
             <div className="ScrollingBoard"><ScrollingBoard /></div>
         </div>
