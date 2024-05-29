@@ -87,7 +87,7 @@ const Service = () => {
   const pageStyle = {
     display: 'flex',
     flexDirection: 'column',
-    marginTop: '200px',
+    marginTop: '50px',
     alignItems: 'center',
     fontSize: '3.5rem',
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
@@ -98,9 +98,13 @@ const Service = () => {
     position: 'relative', // Ensure it sits on top of the background
   };
 
+  const typedWordsStyle = {
+    marginTop: '50px',
+  };
+
   return (
     <main id="page1" className="page" style={pageStyle}>
-      <div className="typed-words">
+      <div className="typed-words" style={typedWordsStyle}>
         <span id="constant1">Your Partner in </span>
         <span id="dynamic" ref={dynamicRef}>
           {dynamicText}
@@ -145,7 +149,6 @@ const Service = () => {
           How it Works
         </button>
       </div>
-
     </main>
   );
 };
