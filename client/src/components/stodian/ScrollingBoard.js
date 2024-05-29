@@ -3,15 +3,15 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import './ScrollingBoard.css';
 
 const floorplans = [
-  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
-  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
-  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
-  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
-  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
-  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
-  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
-  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
-  { title: "Eva's Design Collective", description: "Dive into the world of design with fellow enthusiasts.", access: "WhatsApp", buildingType: "Studio", cost: "$9.99 / month" },
+  { title: "MEP Floorplans for Commercial Spaces", description: "Explore detailed MEP floorplans for commercial buildings, tailored for optimal efficiency.", access: "Website", buildingType: "Commercial", cost: "$19.99 / month" },
+{ title: "MEP Floorplans for Residential Buildings", description: "Discover comprehensive MEP floorplans designed for residential projects, ensuring comfort and sustainability.", access: "Mobile App", buildingType: "Residential", cost: "$14.99 / month" },
+{ title: "MEP Floorplans for Industrial Facilities", description: "Gain access to MEP floorplans tailored for industrial facilities, focusing on robust and efficient designs.", access: "Desktop Software", buildingType: "Industrial", cost: "$29.99 / month" },
+{ title: "MEP Floorplans for Healthcare Environments", description: "View MEP floorplans specifically designed for healthcare settings, emphasizing safety and compliance.", access: "Website", buildingType: "Healthcare", cost: "$24.99 / month" },
+{ title: "MEP Floorplans for Educational Institutions", description: "Access MEP floorplans for educational buildings, designed to support a conducive learning environment.", access: "Mobile App", buildingType: "Educational", cost: "$17.99 / month" },
+{ title: "MEP Floorplans for Retail Spaces", description: "Explore MEP floorplans for retail environments, focusing on energy efficiency and customer experience.", access: "Website", buildingType: "Retail", cost: "$19.99 / month" },
+{ title: "MEP Floorplans for Hospitality Venues", description: "Discover MEP floorplans designed for hospitality venues, ensuring guest comfort and operational efficiency.", access: "Desktop Software", buildingType: "Hospitality", cost: "$22.99 / month" },
+{ title: "MEP Floorplans for Sports Facilities", description: "Gain access to MEP floorplans for sports facilities, tailored to meet the demands of athletic environments.", access: "Website", buildingType: "Sports", cost: "$27.99 / month" },
+{ title: "MEP Floorplans for Transportation Hubs", description: "View MEP floorplans for transportation hubs, focusing on seamless integration and passenger flow.", access: "Mobile App", buildingType: "Transportation", cost: "$25.99 / month" }
 ];
 
 const ScrollingBoard = () => {
