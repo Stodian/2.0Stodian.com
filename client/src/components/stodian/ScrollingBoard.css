@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-top: 110px;
+  margin-top: 250px;
 }
 
 .scrolling-board-wrapper {
@@ -14,9 +14,7 @@
   align-items: center;
   transition: transform 0.5s ease-in-out;
   will-change: transform;
-  animation: scroll 30s linear infinite;
 }
-
 
 .floorplan {
   background-color: white;
@@ -25,38 +23,51 @@
   padding: 20px;
   margin: 10px;
   text-align: center;
-  width: 2000px; /* Fixed width to ensure even spacing */
+  width: 300px; /* Set a fixed width */
+  height: 350px; /* Set a fixed height */
   transition: transform 0.5s ease, opacity 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+}
+
+.floorplan h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.floorplan p {
+  margin: 5px 0;
+  font-size: 14px;
 }
 
 .floorplan.active {
   transform: scale(1.2);
   opacity: 1;
-  z-index: 5;
 }
 
 .floorplan.left, .floorplan.right {
   transform: scale(1);
   opacity: 0.8;
-  z-index: 4;
 }
 
 .floorplan.far-left, .floorplan.far-right {
   transform: scale(0.8);
   opacity: 0.6;
-  z-index: 3;
 }
 
 .floorplan.far-far-left, .floorplan.far-far-right {
   transform: scale(0.6);
   opacity: 0.4;
-  z-index: 2;
 }
 
 .floorplan.far-far-far-left, .floorplan.far-far-far-right {
   transform: scale(0.4);
   opacity: 0.2;
-  z-index: 1;
 }
 
 .nav-button {

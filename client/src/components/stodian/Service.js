@@ -96,6 +96,7 @@ const Service = () => {
     fontWeight: 'bold',
     zIndex: 1, // Higher z-index to sit above the background
     position: 'relative', // Ensure it sits on top of the background
+    height: '0px'
   };
 
   const typedWordsStyle = {
@@ -166,7 +167,7 @@ const buttonStyle1 = {
   fontWeight: 'bold',
   textTransform: 'uppercase',
   outline: 'none',
-  zIndex: 1, // Higher z-index for the button to ensure it sits above other content
+  zIndex: 0, // Higher z-index for the button to ensure it sits above other content
   position: 'relative',
 };
 
@@ -183,7 +184,7 @@ const buttonStyle2 = {
   fontWeight: 'bold',
   textTransform: 'uppercase',
   outline: 'none',
-  zIndex: 1, // Higher z-index for the button to ensure it sits above other content
+  zIndex: 0, // Higher z-index for the button to ensure it sits above other content
   position: 'relative',
 };
 
